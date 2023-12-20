@@ -11,6 +11,8 @@ pylint = "*"
 
 [packages]
 requests = "*"
+flask = "*"
+gunicorn = "*"
 
 [pipenv]
 allow_prereleases = true

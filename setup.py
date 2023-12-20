@@ -13,7 +13,7 @@ def get_long_description() -> str:
 
 
 def get_version() -> str:
-    black_py = CURRENT_DIR / "linkedin_api/__init__.py"
+    black_py = CURRENT_DIR / "src/linkedin_api/__init__.py"
     _version_re = re.compile(r"__version__\s+=\s+(?P<version>.*)")
     with open(black_py, "r", encoding="utf8") as f:
         match = _version_re.search(f.read())

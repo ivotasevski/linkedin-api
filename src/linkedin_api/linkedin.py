@@ -7,19 +7,21 @@ from time import sleep
 from urllib.parse import urlencode, quote_plus
 import json
 
-from linkedin_api.utils.helpers import get_id_from_urn
+from src.linkedin_api.utils.helpers import get_id_from_urn
 
-from linkedin_api.client import Client
+from src.linkedin_api.client import Client
 
 logger = logging.getLogger(__name__)
 
 
 def default_evade():
+    # do nothing
+    pass
     """
     A catch-all method to try and evade suspension from Linkedin.
     Currenly, just delays the request by a random (bounded) time
     """
-    sleep(random.randint(2, 5))  # sleep a random duration to try and evade suspention
+    # sleep(random.randint(2, 5))  # sleep a random duration to try and evade suspention
 
 
 class Linkedin(object):
@@ -33,9 +35,13 @@ class Linkedin(object):
         200
     )  # VERY conservative max requests count to avoid rate-limit
 
-    def __init__(self, username, password, *, refresh_cookies=False, debug=True, proxies={}):
+    def __init__(self, username=None, password=None, *, refresh_cookies=False, debug=True, proxies={}):
         self.client = Client(refresh_cookies=refresh_cookies, debug=debug, proxies=proxies)
-        self.client.authenticate(username, password)
+
+        # authenticate only if username and password were provided
+        if username is not None and password is not None:
+            self.client.authenticate(username, password)
+
         logging.basicConfig(level=logging.DEBUG if debug else logging.INFO)
 
         self.logger = logger

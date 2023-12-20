@@ -1,3 +1,6 @@
+# Web App exposing endpoint for extracting LinkedIn Profile information
+https://chromewebstore.google.com/detail/export-cookie-json-file-f/nmckokihipjgplolmcmjakknndddifde
+
 # linkedin_api
 
 👨‍💼 Python Wrapper for the Linkedin API
@@ -40,7 +43,7 @@ $ pip install linkedin-api
 ### Example usage
 
 ```python
-from linkedin_api import Linkedin
+from src.linkedin_api import Linkedin
 
 # Authenticate using any Linkedin account credentials
 api = Linkedin('reedhoffman@linkedin.com', 'iheartmicrosoft')

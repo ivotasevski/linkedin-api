@@ -1,7 +1,6 @@
 import pytest
-import json
 import os
-from linkedin_api.client import Client
+from src.linkedin_api import Client
 
 
 @pytest.fixture

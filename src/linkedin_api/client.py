@@ -2,7 +2,7 @@ import requests
 import pickle
 import logging
 
-import linkedin_api.settings as settings
+import src.linkedin_api.settings as settings
 
 logger = logging.getLogger(__name__)
 
@@ -94,6 +94,9 @@ class Client(object):
         )
         with open(settings.COOKIE_FILE_PATH, "wb") as f:
             pickle.dump(cookiejar, f)
+
+    def set_cookies(self, cookie_jar):
+        self._set_session_cookies(cookie_jar)
 
     @property
     def cookies(self):

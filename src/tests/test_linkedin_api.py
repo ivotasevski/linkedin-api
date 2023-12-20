@@ -2,7 +2,7 @@ import os
 import sys
 import pytest
 
-from linkedin_api import Linkedin
+from src.linkedin_api import Linkedin
 
 TEST_LINKEDIN_USERNAME = os.getenv("LINKEDIN_USERNAME")
 TEST_LINKEDIN_PASSWORD = os.getenv("LINKEDIN_PASSWORD")

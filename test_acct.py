@@ -1,4 +1,4 @@
-from linkedin_api import Linkedin
+from src.linkedin_api import Linkedin
 from random import randint
 from re import split
 
