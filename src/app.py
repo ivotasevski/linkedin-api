@@ -43,7 +43,6 @@ def make_app():
             del c["name"]
             del c["value"]
             del c["httpOnly"]
-            print(c)
             cookie_jar.set(name, value, **c)
 
         linkedin.client.set_cookies(cookie_jar)

@@ -1,5 +1,23 @@
-# Web App exposing endpoint for extracting LinkedIn Profile information
+# Description
+This is a WebApp wrapper around original implementation.
+Unlike the original implementation, it offers possibility to avoid authentication by simply setting the cookies manually (by invoking POST endpoint).
+
+## How to use
+Run the web application. It exposes the following endpoints:  
+- GET /linkedin/profile/<profile_vanity_id>
+- POST /linkedin/cookies
+
+Use the first one to get a profile information (You must set cookies before).  
+Use the second one to set cookies.
+
+### How to set cookies
+1. Install the following Chrome plugin:
 https://chromewebstore.google.com/detail/export-cookie-json-file-f/nmckokihipjgplolmcmjakknndddifde
+
+2. Login on LinkedIn. Open the plugin and export the cookies in a JSON file.
+3. Upload the contents of the file (as application/json) using the second endpoint.  
+Note: Once uploaded the cookies will be stored locally, so they can be reused even between application restarts (until valid).
+
 
 # linkedin_api
 
